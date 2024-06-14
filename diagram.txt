@@ -1,0 +1,32 @@
+Table User {
+  id integer [primary key]
+  name string
+  password string
+  created_at timestamp 
+}
+
+Table Like_Dislike {
+  id integer [primary key]
+  user_id integer
+  like_dislike integer 
+}
+
+Table Page {
+  id integer [primary key]
+  title string
+  text text
+  user_id integer
+  created_at timestamp
+}
+
+Table React {
+  id integer [primary key]
+  page_id integer
+  comment text
+}
+
+Ref: User.id > Page.user_id
+Ref: User.id > Like_Dislike.user_id
+Ref: Page.id > React.page_id
+Ref: Like_Dislike.like_dislike > React.comment
+Ref: Like_Dislike.like_dislike > Page.text
