@@ -2,6 +2,6 @@ let date = new Date(Date.now() + 86400000); //86400000 représente les ms d'une 
 date = date.toUTCString();
 
 
-document.cookie= 'user= User; path=/; expires=' + date;
+document.cookie= 'user= .user; path=/; expires=' + date;
 
 // https://www.pierre-giraud.com/javascript-apprendre-coder-cours/cookies/
