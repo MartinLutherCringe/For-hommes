@@ -16,6 +16,21 @@
     </form>
     <div id="posts"></div>
 </div>
+<div class="wrapper">
+    <p class=""text">What did you think <br>of this post?</p>
+    <div class="box">
+        <div class=""icons">
+        <span class=""like" id="likeCount">0</span>
+        <i class="fa-regular fa-thumbs-up" id="likeBtn"
+        onclick="toggleLike()"></i>
+        </div>
+        <div class="icons">
+            <i class="fa-regular fa-thumbs-down" id="dislikeBtn"
+            onclick="toggleDislike()"></i>
+            <span class="dislike" id="dislikeCount">0</span>
+            </div>
+    </div>
+</div>
 <script src="main.js"></script>
 </body>
 </html>
