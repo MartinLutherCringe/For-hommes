@@ -62,10 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
 let isLiked = false;
 let isDisliked = false;
 
-const toggleLike = () => {
-    const likeBtn = document.getElementById("likeBTN");
-    const likeCount = document.getElementById("likeCount");
+const likeBtn = document.getElementById('likeBtn');
+const likeCount = document.getElementById("likeCount");
+const dislikeBtn = document.getElementById('dislikeBtn');
+const dislikeCount = document.getElementById("dislikeCount");
 
+likeBtn.addEventListener("click", function () {
     if(isLiked) {
         isLiked = false;
         likeCount.textContent = parseInt(likeCount.textContent) - 1;
@@ -75,9 +77,8 @@ const toggleLike = () => {
         isLiked = true;
         if (isDisliked) {
             isDisliked = false;
-            const dislikeCount = document.getElementById("dislikeCount");
+            
             dislikeCount.textContent = parseInt(dislikeCount.textContext) - 1;
-            const dislikeBtn = document.getElementById("dislikeBtn)");
             dislikeBtn.classList.remove("fa-solid");
             dislikeBtn.classicList.add("fa-regular");
         }
@@ -85,12 +86,9 @@ const toggleLike = () => {
         likeBtn.classList.remove("fa-regular");
         likeBtn.classList.add("fa-solid");
     }
-}
+})
 
-const toggledisLike = () => {
-    const dislikeBtn = document.getElementById("dislikeBTN");
-    const dislikeCount = document.getElementById("dislikeCount");
-
+dislikeBtn.addEventListener("click", function () {
     if(isDisliked) {
         isDisliked = false;
         dislikeCount.textContent = parseInt(dislikeCount.textContent) - 1;
@@ -100,14 +98,12 @@ const toggledisLike = () => {
         isDisliked = true;
         if (isLiked) {
             isLiked = false;
-            const likeCount = document.getElementById("likeCount");
-            likeCount.textContent = parseInt(dislikeCount.textContext) - 1;
-            const dislikeBtn = document.getElementById("likeBtn)");
+            likeCount.textContent = parseInt(likeCount.textContext) - 1;
             likeBtn.classList.remove("fa-solid");
             likeBtn.classicList.add("fa-regular");
         }
-        dislikeCount.textContent = parseInt(likeCount.textContent) + 1;
+        dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
         dislikeBtn.classList.remove("fa-regular");
         dislikeBtn.classList.add("fa-solid");
-    }
-}
+    };
+})

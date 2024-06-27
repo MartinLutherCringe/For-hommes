@@ -68,7 +68,7 @@ body {
     padding: 0 8px;
     cursor: pointer;
     background: #222;
-    border: 2px solid;
+    border: 2px solid #fff;
     border-radius: 50px;
     transition: 0.2s ease;
 }
@@ -76,11 +76,11 @@ body {
 .icons .like {
     width: 35px;
     border-right: 2px solid #fff;
-    padding: 0 8px 0 10px;
+    padding: 0 10px 0 8px;
     pointer-events: none;
-}pointer
+}
 
-.cons .dislike{
+.icons .dislike{
     width: 35px;
     border-left: 2px solid #fff;
     padding: 0 8px 0 10px;
