@@ -9,14 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(posts => {
                 console.log('Fetched posts:', posts); // Vérification des données reçues
                 let postsHTML = '';
-                posts.forEach(post => {
+                for (let i = 0; i < posts.length; i++) {
+                    let post = posts[i];
                     postsHTML += `
                         <div class="post">
                             <h2>${post.title}</h2>
                             <p>${post.content}</p>
                         </div>
                     `;
-                });
+                }
                 postsDiv.innerHTML = postsHTML;
             })
             .catch(error => console.error('Error fetching posts:', error));
@@ -62,27 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
 let isLiked = false;
 let isDisliked = false;
 
-const likeBtn = document.getElementById('likeBtn');
-const likeCount = document.getElementById("likeCount");
-const dislikeBtn = document.getElementById('dislikeBtn');
-const dislikeCount = document.getElementById("dislikeCount");
+var likeBtn = document.getElementById('likeBtn');
+var likeCount = document.getElementById("likeCount");
+var dislikeBtn = document.getElementById('dislikeBtn');
+var dislikeCount = document.getElementById("dislikeCount");
 
 likeBtn.addEventListener("click", function () {
     if(isLiked) {
         isLiked = false;
-        likeCount.textContent = parseInt(likeCount.textContent) - 1;
+        likeCount.textContent = (parseInt(likeCount.textContent) - 1).toString();
         likeBtn.classList.remove("fa-solid");
         likeBtn.classList.add("fa-regular");
     } else {
         isLiked = true;
         if (isDisliked) {
             isDisliked = false;
-            
-            dislikeCount.textContent = parseInt(dislikeCount.textContext) - 1;
+            dislikeCount.textContent = (parseInt(dislikeCount.textContent) - 1).toString();
             dislikeBtn.classList.remove("fa-solid");
             dislikeBtn.classList.add("fa-regular");
         }
-        likeCount.textContent = parseInt(likeCount.textContent) + 1;
+        likeCount.textContent = (parseInt(likeCount.textContent) + 1).toString();
         likeBtn.classList.remove("fa-regular");
         likeBtn.classList.add("fa-solid");
     }
@@ -91,18 +91,18 @@ likeBtn.addEventListener("click", function () {
 dislikeBtn.addEventListener("click", function () {
     if(isDisliked) {
         isDisliked = false;
-        dislikeCount.textContent = parseInt(dislikeCount.textContent) - 1;
+        dislikeCount.textContent = (parseInt(dislikeCount.textContent) - 1).toString();
         dislikeBtn.classList.remove("fa-solid");
         dislikeBtn.classList.add("fa-regular");
     } else {
         isDisliked = true;
         if (isLiked) {
             isLiked = false;
-            likeCount.textContent = parseInt(likeCount.textContext) - 1;
+            likeCount.textContent = (parseInt(likeCount.textContent) - 1).toString();
             likeBtn.classList.remove("fa-solid");
             likeBtn.classList.add("fa-regular");
         }
-        dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
+        dislikeCount.textContent = (parseInt(dislikeCount.textContent) + 1).toString();
         dislikeBtn.classList.remove("fa-regular");
         dislikeBtn.classList.add("fa-solid");
     };
