@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Forum</h1>
+        <form id="postForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="content" placeholder="Content" required></textarea>
+            <button type="submit">Create Post</button>
+        </form>
+        <div id="posts"></div>
+    </div>
+    <div class="wrapper">
+        <p class="text">What did you think <br>of this post?</p>
+        <div class="box">
+            <div class="icons">
+            <span class="like" id="likeCount">0</span>
+            <i class="fa-regular fa-thumbs-up" id="likeBtn"></i>
+            </div>
+            <div class="icons">
+                <i class="fa-regular fa-thumbs-down" id="dislikeBtn"></i>
+                <span class="dislike" id="dislikeCount">0</span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
